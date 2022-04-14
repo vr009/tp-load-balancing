@@ -1,0 +1,42 @@
+global:
+  scrape_interval:     5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  # LOAD BALANCER
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'vr-balancer-server'
+    static_configs:
+      - targets: ['node_exporter:9100']
+
+  # SERVERS
+
+  # SERVER 1
+  - job_name: 'vr-1-backend'
+    static_configs:
+      - targets: ['82.148.17.3:5050']
+
+  - job_name: 'vr-1-server'
+    static_configs:
+      - targets: ['82.148.17.3:9100']
+
+  # SERVER 2
+  - job_name: 'vr-2-backend'
+    static_configs:
+      - targets: ['77.223.99.188:5050']
+
+  - job_name: 'vr-2-server'
+    static_configs:
+      - targets: ['77.223.99.188:9100']
+
+  # SERVER 3
+  - job_name: 'vr-3-backend'
+    static_configs:
+      - targets: ['77.223.97.133:5050']
+
+  - job_name: 'Zotov-3-server'
+    static_configs:
+      - targets: ['77.223.97.133:9100']
