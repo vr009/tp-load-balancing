@@ -1,8 +1,9 @@
 FROM golang:1.16 AS build
 
+ENV GOPATH=/
+
 ADD . .
 
-RUN rm $HOME/go/go.mod
 
 RUN go mod tidy
 
