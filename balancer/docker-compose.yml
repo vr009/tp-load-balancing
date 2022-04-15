@@ -5,7 +5,7 @@ services:
     container_name: haproxy
     image: haproxy:latest
     volumes:
-      - ./haproxy.cfg:/usr/local/etc/haproxy.cfg:ro
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     ports:
       - "80:80"
 
