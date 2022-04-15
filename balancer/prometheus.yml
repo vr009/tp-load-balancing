@@ -37,6 +37,6 @@ scrape_configs:
     static_configs:
       - targets: ['5.188.143.35:5050']
 
-  - job_name: 'Zotov-3-server'
+  - job_name: 'vr-3-server'
     static_configs:
       - targets: ['5.188.143.35:9100']
